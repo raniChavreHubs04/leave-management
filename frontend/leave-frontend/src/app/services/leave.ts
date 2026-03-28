@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LeaveService {
 
- private apiUrl = 'https://leave-management-api.onrender.com/api/leaves';
+ private apiUrl = 'https://leave-backend.onrender.com/api/leaves';
 
   constructor(private http: HttpClient) {}
 
