@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-private apiUrl = 'https://leave-backend.onrender.com/api/users';
+private apiUrl = 'https://leave-backend-bp79.onrender.com/api/users';
   private tokenKey = 'token';
 
   constructor(private http: HttpClient, private router: Router) {}
