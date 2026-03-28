@@ -1,0 +1,39 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>CREATE ACCOUNT</h2>
+    <p class="subtitle">Join the Leave Management System</p>
+    
+    <form (ngSubmit)="onRegister()">
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" [(ngModel)]="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" required>
+      </div>
+      
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Create a password" required>
+      </div>
+
+      <div class="input-group">
+        <label>Role</label>
+        <select [(ngModel)]="role" name="role">
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <div *ngIf="errorMsg" class="error-msg">{{ errorMsg }}</div>
+
+      <button type="submit" class="btn-primary">Register</button>
+
+      <p class="footer-text">
+        Already have an account? <a routerLink="/login">Login Here</a>
+      </p>
+    </form>
+  </div>
+</div>

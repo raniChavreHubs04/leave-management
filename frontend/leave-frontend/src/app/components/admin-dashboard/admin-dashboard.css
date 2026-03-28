@@ -1,0 +1,77 @@
+.admin-container {
+  min-height: 100vh;
+  background-color: #1a1a2e;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.header h2 { font-weight: 700; color: #e94560; }
+.btn-logout {
+  background: #e94560;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.table-card {
+  background: #16213e;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.modern-table th {
+  text-align: left;
+  padding: 15px;
+  color: #a2a2a2;
+  border-bottom: 2px solid #0f3460;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.modern-table td {
+  padding: 15px;
+  border-bottom: 1px solid #0f3460;
+  color: #fff;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.pending { background: #ffc107; color: black; }
+.approved { background: #28a745; color: white; }
+.rejected { background: #dc3545; color: white; }
+
+/* Action Buttons */
+.actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.btn-approve { background: #28a745; color: white; }
+.btn-reject { background: #dc3545; color: white; }

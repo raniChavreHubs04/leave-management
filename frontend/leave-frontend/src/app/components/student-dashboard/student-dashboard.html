@@ -1,0 +1,107 @@
+<div class="dashboard-wrapper">
+  
+  <!-- HEADER SECTION -->
+  <div class="header-section">
+    <div class="welcome-text">
+      <h1>Welcome, {{ userName }}! 👋</h1>
+      <p>Here is your leave status overview</p>
+    </div>
+  </div>
+
+  <!-- LEAVE BALANCE CARD (Hero Card) -->
+  <div class="balance-card">
+    <div class="balance-info">
+      <span class="label">Available Leave Balance</span>
+      <h2 class="value">{{ remainingLeaves }} <span class="unit">Days</span></h2>
+      <p class="sub-text">Out of {{ totalAllowed }} days yearly quota</p>
+    </div>
+    <div class="balance-visual">
+      <!-- Circular Progress Look -->
+      <div class="circle-progress">
+        <svg viewBox="0 0 100 100">
+          <circle class="bg" cx="50" cy="50" r="45"></circle>
+          <circle class="progress" cx="50" cy="50" r="45" 
+                  [style.stroke-dashoffset]="calculateOffset()"></circle>
+        </svg>
+        <div class="percentage">{{ getPercentage() }}%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS GRID -->
+  <div class="stats-grid">
+    <!-- Total Applied -->
+    <div class="stat-card total">
+      <div class="icon-box"><i class="fas fa-file-alt"></i></div>
+      <div class="details">
+        <h3>{{ totalLeaves }}</h3>
+        <p>Total Applied</p>
+      </div>
+    </div>
+
+    <!-- Approved -->
+    <div class="stat-card approved">
+      <div class="icon-box"><i class="fas fa-check-circle"></i></div>
+      <div class="details">
+        <h3>{{ approvedLeaves }}</h3>
+        <p>Approved</p>
+      </div>
+    </div>
+
+    <!-- Pending -->
+    <div class="stat-card pending">
+      <div class="icon-box"><i class="fas fa-hourglass-half"></i></div>
+      <div class="details">
+        <h3>{{ pendingLeaves }}</h3>
+        <p>Pending</p>
+      </div>
+    </div>
+
+    <!-- Rejected -->
+    <div class="stat-card rejected">
+      <div class="icon-box"><i class="fas fa-times-circle"></i></div>
+      <div class="details">
+        <h3>{{ rejectedLeaves }}</h3>
+        <p>Rejected</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY TABLE -->
+  <div class="history-section">
+    <div class="section-header">
+      <h2>Leave History</h2>
+      <a routerLink="/apply-leave" class="btn-new">+ Apply Leave</a>
+    </div>
+
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>Reason</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of leaves">
+          <td>{{ leave.reason }}</td>
+          <td>{{ leave.fromDate | date:'dd MMM, yyyy' }}</td>
+          <td>{{ leave.toDate | date:'dd MMM, yyyy' }}</td>
+          <td>
+            <span class="status-badge" [ngClass]="leave.status.toLowerCase()">
+              {{ leave.status }}
+            </span>
+          </td>
+        </tr>
+        <tr *ngIf="leaves.length === 0">
+          <td colspan="4" class="no-data">
+            <i class="fas fa-folder-open"></i>
+            <p>No leave history found</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

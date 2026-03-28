@@ -1,0 +1,31 @@
+<h2>Leave Requests</h2>
+
+<table class="table table-bordered mt-3">
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Reason</th>
+<th>From</th>
+<th>To</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let leave of leaves">
+
+<td>{{leave.name}}</td>
+<td>{{leave.reason}}</td>
+<td>{{leave.fromDate}}</td>
+<td>{{leave.toDate}}</td>
+<td>{{leave.status}}</td>
+
+</tr>
+
+</tbody>
+
+</table>

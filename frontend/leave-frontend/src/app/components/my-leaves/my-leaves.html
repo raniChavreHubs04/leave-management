@@ -1,0 +1,29 @@
+<div class="history-container">
+  <h2>My Leave History 📜</h2>
+  
+  <div class="table-wrapper">
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Reason</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of leaves">
+          <td>{{ leave.reason }}</td>
+          <td>{{ leave.fromDate | date:'mediumDate' }}</td>
+          <td>{{ leave.toDate | date:'mediumDate' }}</td>
+          <td>
+            <span class="badge" [ngClass]="leave.status.toLowerCase()">{{ leave.status }}</span>
+          </td>
+        </tr>
+        <tr *ngIf="leaves.length === 0">
+          <td colspan="4" style="text-align:center;">No history found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

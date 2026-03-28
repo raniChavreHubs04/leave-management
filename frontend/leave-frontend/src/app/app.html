@@ -1,0 +1,27 @@
+<!-- Agar User Logged in hai to Sidebar dikhao -->
+<div class="dashboard-container" *ngIf="auth.isLoggedIn(); else loginScreen">
+  
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h3>Leave Portal</h3>
+      <p>Welcome, {{ auth.getUserName() }}</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a routerLink="/student-dashboard" class="nav-link" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/apply-leave" class="nav-link" routerLinkActive="active">Apply Leave</a>
+      <a routerLink="/my-leaves" class="nav-link" routerLinkActive="active">History</a>
+      <a (click)="auth.logout()" class="nav-link logout">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<!-- Agar User Logged in nahi hai to Login Screen dikhao -->
+<ng-template #loginScreen>
+  <router-outlet></router-outlet>
+</ng-template>

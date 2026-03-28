@@ -1,0 +1,105 @@
+.apply-container {
+  min-height: 100vh;
+  background-color: #1a1a2e; /* Dark Background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+.apply-card {
+  background: #16213e; /* Card Dark Blue */
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h3 {
+  color: #e94560; /* Accent Color */
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  color: #a2a2a2;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+select, input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  background: #0f3460;
+  border: 1px solid #e94560;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #e94560;
+}
+
+/* Priority Buttons Style */
+.priority-group {
+  display: flex;
+  gap: 10px;
+}
+
+.priority-group button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #0f3460;
+  color: #a2a2a2;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.priority-group button.active {
+  background: #e94560;
+  color: white;
+  box-shadow: 0 0 10px #e94560;
+}
+
+.date-row {
+  display: flex;
+  gap: 20px;
+}
+
+.date-row .form-group {
+  flex: 1;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #ff6b81;
+  box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
