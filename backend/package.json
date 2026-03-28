@@ -1,13 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Leave Management Backend",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rani",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -17,8 +17,5 @@
     "express": "^4.22.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^7.8.9"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.14"
   }
 }
